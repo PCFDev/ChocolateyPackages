@@ -2,31 +2,33 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>jboss</id>
     <title>JBoss</title>
     <version>7.1.1</version>
     <authors>JBoss Developers</authors>
     <owners>ITLackey</owners>
     <summary>Install the JBoss Application Server</summary>
-    <description>__REPLACE__MarkDown_Okay 
+    <description>
+      JBoss is a Application Server. It is possible to run Web application ARchive (WAR) files using JBoss. JBoss 7.1.1 requires a JDK 7 in order to run.
+
+### Optional installation commands:
+
+`choco install jboss -packageparamters '/InstallationPath=c:\opt\jboss"` to specify the directory for the Tomcat service. This defaults to `C:\Program Files\Apache Software Foundation\Tomcat`.
+
+
     </description>
     <projectUrl>http://jbossas.jboss.org/downloads</projectUrl>
-    <packageSourceUrl>https://github.com/PCFDev/ChocolateyPackages/tree/master/jboss</packageSourceUrl>
     <projectSourceUrl>http://jbossas.jboss.org/downloads</projectSourceUrl>
-     <!--<docsUrl></docsUrl>
-    <mailingListUrl></mailingListUrl>-->
+    <packageSourceUrl>https://github.com/PCFDev/ChocolateyPackages/tree/master/jboss</packageSourceUrl>    
     <bugTrackerUrl>https://github.com/PCFDev/ChocolateyPackages/issues</bugTrackerUrl>
     <tags>jboss admin java jdk</tags>
-    <!--<copyright></copyright>-->
     <licenseUrl>http://jbossas.jboss.org/downloads</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>http://cdn.rawgit.com/pcfdev/chocolateypackages/master/jboss/icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/PCFDev/ChocolateyPackages/master/jboss/icon.png</iconUrl>
     <dependencies>
       <dependency id="jdk7" version="7.0.79" />      
     </dependencies>
     <releaseNotes>https://developer.jboss.org/wiki/AS711FinalReleaseNotes</releaseNotes>
-    <!--<provides></provides>-->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
