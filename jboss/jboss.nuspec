@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+    <id>jboss</id>
+    <title>JBoss 7.1.1</title>
+    <version>7.1.1</version>
+    <authors>ITLackey</authors>
+    <owners>ITLackey</owners>
+    <summary>Install the JBoss Application Server</summary>
+    <description>__REPLACE__MarkDown_Okay 
+    </description>
+    <projectUrl>http://jbossas.jboss.org/downloads</projectUrl>
+    <packageSourceUrl>http://jbossas.jboss.org/downloads</packageSourceUrl>
+    <!--<projectSourceUrl></projectSourceUrl>
+    <docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>
+    <bugTrackerUrl></bugTrackerUrl>-->
+    <tags>jboss admin SPACE_SEPARATED</tags>
+    <copyright></copyright>
+    <licenseUrl>http://jbossas.jboss.org/downloads</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/jboss.png</iconUrl>-->
+    <dependencies>
+      <dependency id="jdk7" version="7.0.79" />      
+    </dependencies>
+    <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes>
+    <!--<provides></provides>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
