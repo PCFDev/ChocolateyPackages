@@ -1,0 +1,9 @@
+{
+  "commands": {
+    "jboss-pack": {
+      "fileName": "powershell.exe",
+      "workingDirectory": ".",
+      "arguments": "-File jboss-pack.ps1"
+    }
+  }
+}
