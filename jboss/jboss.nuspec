@@ -4,28 +4,28 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>jboss</id>
-    <title>JBoss 7.1.1</title>
+    <title>JBoss</title>
     <version>7.1.1</version>
-    <authors>ITLackey</authors>
+    <authors>JBoss Developers</authors>
     <owners>ITLackey</owners>
     <summary>Install the JBoss Application Server</summary>
     <description>__REPLACE__MarkDown_Okay 
     </description>
     <projectUrl>http://jbossas.jboss.org/downloads</projectUrl>
-    <packageSourceUrl>http://jbossas.jboss.org/downloads</packageSourceUrl>
-    <!--<projectSourceUrl></projectSourceUrl>
-    <docsUrl></docsUrl>
-    <mailingListUrl></mailingListUrl>
-    <bugTrackerUrl></bugTrackerUrl>-->
-    <tags>jboss admin SPACE_SEPARATED</tags>
-    <copyright></copyright>
+    <packageSourceUrl>https://github.com/PCFDev/ChocolateyPackages/tree/master/jboss</packageSourceUrl>
+    <projectSourceUrl>http://jbossas.jboss.org/downloads</projectSourceUrl>
+     <!--<docsUrl></docsUrl>
+    <mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/PCFDev/ChocolateyPackages/issues</bugTrackerUrl>
+    <tags>jboss admin java jdk</tags>
+    <!--<copyright></copyright>-->
     <licenseUrl>http://jbossas.jboss.org/downloads</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/jboss.png</iconUrl>-->
+    <iconUrl>http://cdn.rawgit.com/pcfdev/chocolateypackages/master/jboss/icon.png</iconUrl>
     <dependencies>
       <dependency id="jdk7" version="7.0.79" />      
     </dependencies>
-    <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes>
+    <releaseNotes>https://developer.jboss.org/wiki/AS711FinalReleaseNotes</releaseNotes>
     <!--<provides></provides>-->
   </metadata>
   <files>

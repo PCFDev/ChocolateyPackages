@@ -3,7 +3,7 @@
     "jboss-pack": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",
-      "arguments": "-File jboss-pack.ps1"
+      "arguments": "-ExecutionPolicy Bypass -File jboss-pack.ps1"
     }
   }
 }

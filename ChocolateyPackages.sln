@@ -7,8 +7,8 @@ Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "ChocolateyPackages", "Choco
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEB9C256-94F2-4E34-9366-157D7BB82F6D}"
 	ProjectSection(SolutionItems) = preProject
-		commands.json = commands.json
-		jboss-pack.ps1 = jboss-pack.ps1
+		_commands\commands.json = _commands\commands.json
+		_commands\jboss-pack.ps1 = _commands\jboss-pack.ps1
 	EndProjectSection
 EndProject
 Global
