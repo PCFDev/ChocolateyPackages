@@ -5,11 +5,6 @@
       "workingDirectory": ".",
       "arguments": "-ExecutionPolicy Bypass -File jboss-pack.ps1"
     },
-    "jboss-service-pack": {
-      "fileName": "powershell.exe",
-      "workingDirectory": ".",
-      "arguments": "-ExecutionPolicy Bypass -File jboss-service-pack.ps1"
-    },
     "axis2-pack": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",

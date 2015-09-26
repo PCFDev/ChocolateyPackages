@@ -30,8 +30,6 @@
   <ItemGroup>
     <Folder Include="axis2\" />
     <Folder Include="axis2\tools\" />
-    <Folder Include="jboss-service\" />
-    <Folder Include="jboss-service\tools\" />
     <Folder Include="jboss\" />
     <Folder Include="jboss\assets\" />
     <Folder Include="jboss\tools\" />
@@ -43,10 +41,6 @@
     <Compile Include="axis2\tools\chocolateyuninstall.ps1" />
     <Compile Include="commands.json" />
     <Compile Include="jboss-pack.ps1" />
-    <Compile Include="jboss-service-pack.ps1" />
-    <Compile Include="jboss-service\jboss-service.nuspec" />
-    <Compile Include="jboss-service\tools\chocolateyinstall.ps1" />
-    <Compile Include="jboss-service\tools\chocolateyuninstall.ps1" />
     <Compile Include="jboss\icon.png" />
     <Compile Include="jboss\jboss.nuspec" />
     <Compile Include="jboss\tools\chocolateyinstall.ps1" />
