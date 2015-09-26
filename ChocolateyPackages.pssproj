@@ -36,9 +36,13 @@
     <Folder Include="jboss\tools\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="axis2-pack.ps1" />
     <Compile Include="axis2\axis2.nuspec" />
     <Compile Include="axis2\tools\chocolateyinstall.ps1" />
     <Compile Include="axis2\tools\chocolateyuninstall.ps1" />
+    <Compile Include="commands.json" />
+    <Compile Include="jboss-pack.ps1" />
+    <Compile Include="jboss-service-pack.ps1" />
     <Compile Include="jboss-service\jboss-service.nuspec" />
     <Compile Include="jboss-service\tools\chocolateyinstall.ps1" />
     <Compile Include="jboss-service\tools\chocolateyuninstall.ps1" />
