@@ -1,4 +1,37 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿function installJBossService{
+    $jbossSvc = Get-Service jboss*
+    if($jbossSvc -eq $null){
+        echo "Downloading $__jbossServiceDownloadUrl"
+    
+        wget $__jbossServiceDownloadUrl -OutFile $__tempFolder\jboss-svc.zip
+            
+        echo "JBOSS Service downloaded"
+
+        echo "Installing JBOSS Service"
+        
+        unzip $__tempFolder\jboss-svc.zip $env:JBOSS_HOME
+        
+        cp skel\jboss\service.bat $env:JBOSS_HOME\bin\service.bat -force
+    
+        &$env:JBOSS_HOME\bin\service.bat install
+
+        Set-Service jboss -StartupType Automatic
+       
+        echo "Adding management user to JBOSS"
+
+        $hashPass = hash ($JBOSS_ADMIN + ":ManagementRealm:" + $JBOSS_PASS)
+
+        $jbossUser = "$JBOSS_ADMIN=$hashPass" 
+
+        echo $jbossUser
+
+        echo ([Environment]::NewLine)$jbossUser |
+            Out-File  $env:JBOSS_HOME\standalone\configuration\mgmt-users.properties -Append -Encoding utf8
+    }
+    echo "JBOSS service installed"
+}
+
+$ErrorActionPreference = 'Stop'
 $packageName = 'jboss'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url = 'http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip'

@@ -1,4 +1,32 @@
-﻿#NOTE: Please remove any commented lines to tidy up prior to releasing the package, including this one
+﻿function installAxis{
+#$__axisVersion = "1.6.1"
+#$__axisDownloadUrl = "http://archive.apache.org/dist/axis/axis2/java/core/$__axisVersion/axis2-$__axisVersion-war.zip"
+
+    if(!(Test-Path "$env:JBOSS_HOME\webapps\i2b2.war"))
+    {
+        
+        echo "Downloading AXIS"
+       
+        wget $__axisDownloadUrl -OutFile $__tempFolder\axis2-$__axisVersion-war.zip
+      
+        echo "AXIS downloaded"
+
+        echo "Installing AXIS War"
+
+        unzip $__tempFolder\axis2-$__axisVersion-war.zip $__tempFolder\axis2-$__axisVersion-war $true
+  
+        unzip $__tempFolder\axis2-$__axisVersion-war\axis2.war $__tempFolder\i2b2.war $true
+
+        mv -Force $__tempFolder\i2b2.war\ $env:JBOSS_HOME\webapps\
+
+        echo "" > $env:JBOSS_HOME\webapps\i2b2.war.dodeploy
+   
+
+    }
+
+    echo "AXIS War Installed"
+}
+#NOTE: Please remove any commented lines to tidy up prior to releasing the package, including this one
 # REMOVE ANYTHING BELOW THAT IS NOT NEEDED
 
 $ErrorActionPreference = 'Stop'; # stop on all errors
