@@ -79,7 +79,7 @@ if($packageParameters) {
 
 $packageArgs = @{
   packageName   = $packageName
-  unzipLocation = $toolsDir
+  unzipLocation = $installationPath
   url           = $url
   checksum      = '175c92545454f4e7270821f4b8326c4e'
   checksumType  = 'md5'  
@@ -87,11 +87,11 @@ $packageArgs = @{
 
 Install-ChocolateyZipPackage @packageArgs
 
-Write-Host "Copy to $installationPath\ from $toolsDir\jboss-as-7.1.1.Final"
-cp -Recurse -Force $toolsDir\jboss-as-7.1.1.Final\* $installationPath\
+Write-Host "Copy to $installationPath\ from $installationPath\jboss-as-7.1.1.Final"
+cp -Recurse -Force $installationPath\jboss-as-7.1.1.Final\* $installationPath\jboss-as-7.1.1.Final\..\
 
-Write-Host "Remove $toolsDir\jboss-as-7.1.1.Final"
-rm -Force -Recurse $toolsDir\jboss-as-7.1.1.Final
+Write-Host "Remove $installationPath\jboss-as-7.1.1.Final"
+rm -Force -Recurse $installationPath\jboss-as-7.1.1.Final
 
 Install-ChocolateyEnvironmentVariable -variableName "JBOSS_HOME" -variableValue "$installationPath" -variableType 'Machine'
 Install-ChocolateyPath "$installationPath\bin" "Machine"
