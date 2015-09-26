@@ -1,34 +1,8 @@
-﻿function installJBossService{
-    $jbossSvc = Get-Service jboss*
-    if($jbossSvc -eq $null){
-        echo "Downloading $__jbossServiceDownloadUrl"
-    
-        wget $__jbossServiceDownloadUrl -OutFile $__tempFolder\jboss-svc.zip
-            
-        echo "JBOSS Service downloaded"
-
-        echo "Installing JBOSS Service"
-        
-        unzip $__tempFolder\jboss-svc.zip $env:JBOSS_HOME
-        
-        cp skel\jboss\service.bat $env:JBOSS_HOME\bin\service.bat -force
-    
-        &$env:JBOSS_HOME\bin\service.bat install
-
-        Set-Service jboss -StartupType Automatic
-       
-        echo "Adding management user to JBOSS"
-
-        $hashPass = hash ($JBOSS_ADMIN + ":ManagementRealm:" + $JBOSS_PASS)
-
-        $jbossUser = "$JBOSS_ADMIN=$hashPass" 
-
-        echo $jbossUser
-
-        echo ([Environment]::NewLine)$jbossUser |
-            Out-File  $env:JBOSS_HOME\standalone\configuration\mgmt-users.properties -Append -Encoding utf8
-    }
-    echo "JBOSS service installed"
+﻿function hash([string] $value){    
+    $md5 = new-object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+    $utf8 = new-object -TypeName System.Text.UTF8Encoding
+    $hash = [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($value))).ToLower().Replace('-', '')
+    echo $hash
 }
 
 $ErrorActionPreference = 'Stop'
@@ -41,6 +15,8 @@ $arguments = @{}
 $packageParameters = $env:chocolateyPackageParameters
 
 $installationPath = "c:\opt\jboss"
+$jbossAdmin = "admin"
+$jbossPass = "password"
 
 # Now parse the packageParameters using good old regular expression
 $arguments = @{};
@@ -67,11 +43,25 @@ if($packageParameters) {
 	 
 	if($arguments.ContainsKey("InstallationPath")) {
 	  $installationPath = $arguments["InstallationPath"];
-	   
 	  Write-Host "Value variable installationPath changed to $installationPath"
 	} else {
 	  Write-Host "Default InstallationPath will be used"
 	}
+
+	if($arguments.ContainsKey("Username")) {
+	  $jbossAdmin = $arguments["Username"];
+	  Write-Host "Admin username changed to $jbossAdmin"
+	} else {
+	  Write-Host "Default admin username will be used"
+	}
+
+	if($arguments.ContainsKey("Password")) {
+	  $jbossPass = $arguments["Password"];
+	  Write-Host "Admin password changed to $jbossPass"
+	} else {
+	  Write-Host "Default admin password will be used. PLEASE CHANGE THIS!!!"
+	}
+	
 	
 } else {
 	Write-Host "Package parameters will not be overwritten"
@@ -96,3 +86,46 @@ rm -Force -Recurse $installationPath\jboss-as-7.1.1.Final
 Install-ChocolateyEnvironmentVariable -variableName "JBOSS_HOME" -variableValue "$installationPath" -variableType 'Machine'
 Install-ChocolateyPath "$installationPath\bin" "Machine"
 Update-SessionEnvironment
+
+#Add admin user to JBoss
+Write-Host "Adding management user to JBoss"
+$hashPass = hash ($jbossAdmin + ":ManagementRealm:" + $jbossPass)
+$jbossUser = "$jbossAdmin=$hashPass" 
+Write-Debug $jbossUser
+Write-Host ([Environment]::NewLine)$jbossUser |
+        Out-File  $installation\standalone\configuration\mgmt-users.properties -Append -Encoding utf8
+
+Write-Host "Installing JBoss Service"
+$jbossSvc = Get-Service jboss*
+if($jbossSvc -eq $null){
+
+	$serviceUrl = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x86-ssl.zip"
+	$serviceUrl64 = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x64-ssl.zip"
+	$servicePackageArgs = @{
+		packageName   = $packageName
+		unzipLocation = $installationPath
+		url           = $serviceUrl
+		url64bit      = $serviceUrl64
+ 
+		checksum    = 'acc45d49f1838183726bf616f0069cfc'
+		checksumType= 'md5'
+		checksum64    = '63477e8e166c9ec695ab2922ca0a31b0'
+		checksumType64= 'md5'
+	}
+		
+	Install-ChocolateyZipPackage @$servicePackageArgs
+
+    #echo "Downloading $__jbossServiceDownloadUrl"
+    #wget $__jbossServiceDownloadUrl -OutFile $__tempFolder\jboss-svc.zip           
+    #echo "JBOSS Service downloaded"
+    #echo "Installing JBOSS Service"       
+    #unzip $__tempFolder\jboss-svc.zip $env:JBOSS_HOME
+        
+    cp $toolsDir\..\assets\service.bat $installationPath\bin\service.bat -force
+    
+    &$installationPath\bin\service.bat install
+
+    Set-Service jboss -StartupType Automatic
+              
+}
+Write-Host "JBoss service installed"

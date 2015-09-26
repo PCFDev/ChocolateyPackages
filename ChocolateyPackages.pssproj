@@ -33,6 +33,7 @@
     <Folder Include="jboss-service\" />
     <Folder Include="jboss-service\tools\" />
     <Folder Include="jboss\" />
+    <Folder Include="jboss\assets\" />
     <Folder Include="jboss\tools\" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,10 @@
     <Compile Include="jboss\tools\chocolateyinstall.ps1" />
     <Compile Include="jboss\tools\chocolateyuninstall.ps1" />
     <Compile Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="jboss\assets\service.bat" />
+    <Content Include="jboss\assets\standalone.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
