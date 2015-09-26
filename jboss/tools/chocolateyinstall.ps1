@@ -91,21 +91,22 @@ Update-SessionEnvironment
 Write-Host "Adding management user to JBoss"
 $hashPass = hash ($jbossAdmin + ":ManagementRealm:" + $jbossPass)
 $jbossUser = "$jbossAdmin=$hashPass" 
-Write-Debug $jbossUser
+Write-Debug "Admin user hash: $jbossUser"
 Write-Host ([Environment]::NewLine)$jbossUser |
-        Out-File  $installation\standalone\configuration\mgmt-users.properties -Append -Encoding utf8
+        Out-File  $installationPath\standalone\configuration\mgmt-users.properties -Append -Encoding utf8
 
-Write-Host "Installing JBoss Service"
+Write-Debug "Checking for JBOSS service..."
 $jbossSvc = Get-Service jboss*
 if($jbossSvc -eq $null){
-
-	$serviceUrl = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x86-ssl.zip"
-	$serviceUrl64 = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x64-ssl.zip"
+	Write-Host "Installing JBoss Service"
+	#$serviceUrl = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x86-ssl.zip"
+	#$serviceUrl64 = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x64-ssl.zip"
+	Write-Debug "Service unzipLocation $installationPath"
 	$servicePackageArgs = @{
-		packageName   = $packageName
+		packageName   = "$packageName-Service"
 		unzipLocation = $installationPath
-		url           = $serviceUrl
-		url64bit      = $serviceUrl64
+		url           = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x86-ssl.zip"
+		url64bit      = "http://downloads.jboss.org/jbossnative/2.0.10.GA/jboss-native-2.0.10-windows-x64-ssl.zip"
  
 		checksum    = 'acc45d49f1838183726bf616f0069cfc'
 		checksumType= 'md5'
@@ -113,7 +114,7 @@ if($jbossSvc -eq $null){
 		checksumType64= 'md5'
 	}
 		
-	Install-ChocolateyZipPackage @$servicePackageArgs
+	Install-ChocolateyZipPackage @servicePackageArgs
 
     #echo "Downloading $__jbossServiceDownloadUrl"
     #wget $__jbossServiceDownloadUrl -OutFile $__tempFolder\jboss-svc.zip           
