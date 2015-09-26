@@ -11,9 +11,10 @@
     <description>
       JBoss is a Application Server. It is possible to run Web application ARchive (WAR) files using JBoss. JBoss 7.1.1 requires a JDK 7 in order to run.
 
-### Optional installation commands:
+      ### Optional installation commands:
 
-`choco install jboss -packageparamters '/InstallationPath=c:\opt\jboss"` to specify the directory for the Tomcat service. This defaults to `C:\Program Files\Apache Software Foundation\Tomcat`.
+     `choco install jboss -packageparamters '/InstallationPath=c:\tools\jboss"` to specify the directory to install JBoss. 
+      This defaults to `c:\opt\jboss`.
 
 
     </description>
