@@ -2,7 +2,7 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <id>jboss</id>
+    <id>jboss-as</id>
     <title>JBoss</title>
     <version>7.1.1</version>
     <authors>JBoss Developers</authors>

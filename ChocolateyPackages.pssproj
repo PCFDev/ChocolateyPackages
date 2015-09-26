@@ -30,9 +30,9 @@
   <ItemGroup>
     <Folder Include="axis2\" />
     <Folder Include="axis2\tools\" />
-    <Folder Include="jboss\" />
-    <Folder Include="jboss\assets\" />
-    <Folder Include="jboss\tools\" />
+    <Folder Include="jboss-as\" />
+    <Folder Include="jboss-as\assets\" />
+    <Folder Include="jboss-as\tools\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="axis2-pack.ps1" />
@@ -40,16 +40,16 @@
     <Compile Include="axis2\tools\chocolateyinstall.ps1" />
     <Compile Include="axis2\tools\chocolateyuninstall.ps1" />
     <Compile Include="commands.json" />
-    <Compile Include="jboss-pack.ps1" />
-    <Compile Include="jboss\icon.png" />
-    <Compile Include="jboss\jboss.nuspec" />
-    <Compile Include="jboss\tools\chocolateyinstall.ps1" />
-    <Compile Include="jboss\tools\chocolateyuninstall.ps1" />
+    <Compile Include="jboss-as-pack.ps1" />
+    <Compile Include="jboss-as\icon.png" />
+    <Compile Include="jboss-as\jboss-as.nuspec" />
+    <Compile Include="jboss-as\tools\chocolateyinstall.ps1" />
+    <Compile Include="jboss-as\tools\chocolateyuninstall.ps1" />
     <Compile Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="jboss\assets\service.bat" />
-    <Content Include="jboss\assets\standalone.xml" />
+    <Content Include="jboss-as\assets\service.bat" />
+    <Content Include="jboss-as\assets\standalone.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

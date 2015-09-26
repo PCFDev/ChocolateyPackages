@@ -1,9 +1,9 @@
 {
   "commands": {
-    "jboss-pack": {
+    "jboss-as-pack": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",
-      "arguments": "-ExecutionPolicy Bypass -File jboss-pack.ps1"
+      "arguments": "-ExecutionPolicy Bypass -File jboss-as-pack.ps1"
     },
     "axis2-pack": {
       "fileName": "powershell.exe",
@@ -13,7 +13,7 @@
   },
   "-vs-binding": {
     "AfterBuild": [
-      "jboss-pack"
+      "jboss-as-pack"
     ]
   }
 }
