@@ -16,6 +16,7 @@
      `choco install jboss -packageparamters '/InstallationPath=c:\tools\jboss"` to specify the directory to install JBoss. 
       This defaults to `c:\opt\jboss`.
 
+	  `choco install jboss -params '"/Start:true /InstallationPath:"c:\jboss" /Username:bob /Password:mypass"'`
 
     </description>
     <projectUrl>http://jbossas.jboss.org/downloads</projectUrl>
