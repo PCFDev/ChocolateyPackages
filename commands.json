@@ -11,9 +11,5 @@
       "arguments": "-ExecutionPolicy Bypass -File axis2-war-pack.ps1"
     }
   },
-  "-vs-binding": {
-    "AfterBuild": [
-      "jboss-as-pack", "axis2-war-pack"
-    ]
-  }
+  "-vs-binding": { "AfterBuild": [ "jboss-as-pack", "axis2-war-pack" ] }
 }
