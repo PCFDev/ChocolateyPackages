@@ -23,7 +23,7 @@
     <tags>jboss admin java jdk</tags>
     <licenseUrl>http://jbossas.jboss.org/downloads</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://raw.githubusercontent.com/PCFDev/ChocolateyPackages/master/jboss/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/PCFDev/ChocolateyPackages/master/jboss-as/icon.png</iconUrl>
     <dependencies>
       <dependency id="jdk7" version="7.0.79" />      
     </dependencies>
