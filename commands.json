@@ -5,15 +5,15 @@
       "workingDirectory": ".",
       "arguments": "-ExecutionPolicy Bypass -File jboss-as-pack.ps1"
     },
-    "axis2-pack": {
+    "axis2-war-pack": {
       "fileName": "powershell.exe",
       "workingDirectory": ".",
-      "arguments": "-ExecutionPolicy Bypass -File axis2-pack.ps1"
+      "arguments": "-ExecutionPolicy Bypass -File axis2-war-pack.ps1"
     }
   },
   "-vs-binding": {
     "AfterBuild": [
-      "jboss-as-pack"
+      "jboss-as-pack", "axis2-war-pack"
     ]
   }
 }

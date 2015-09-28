@@ -1,0 +1,5 @@
+choco install {packageName} -fdvyi -source .\_packages
+choco uninstall {packageName} -fdvy
+
+
+choco install axis2 -fdvyi -source .\_packages -params '/InstallationPath:"c:\installs\{packageName}"'
