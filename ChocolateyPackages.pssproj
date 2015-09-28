@@ -32,6 +32,7 @@
     <Folder Include="axis2-war\tools\" />
     <Folder Include="jboss-as\" />
     <Folder Include="jboss-as\tools\" />
+    <Folder Include="_packages\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="axis2-war-pack.ps1" />
@@ -47,6 +48,10 @@
     <Compile Include="jboss-as\tools\chocolateyuninstall.ps1" />
     <Compile Include="jboss-as\tools\service.bat" />
     <Compile Include="README.md" />
+    <Compile Include="_packages\axis2-war.1.6.1.nupkg" />
+    <Compile Include="_packages\axis2-war.1.6.2.nupkg" />
+    <Compile Include="_packages\axis2-war.1.6.3.nupkg" />
+    <Compile Include="_packages\jboss-as.7.1.1.nupkg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
