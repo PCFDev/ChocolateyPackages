@@ -9,11 +9,11 @@
     <owners>ITLackey</owners>
     <summary>Install the JBoss Application Server</summary>
     <description>
-      JBoss is a Application Server. It is possible to run Web application ARchive (WAR) files using JBoss. JBoss 7.1.1 requires a JDK 7 in order to run.
+		JBoss is a Application Server. It is possible to run Web application ARchive (WAR) files using JBoss. JBoss 7.1.1 requires a JDK 7 in order to run.
 
-      ### Overriding installation parameters example:
+		##Overriding installation parameters example:
 
-	    `choco install jboss -params '"/Start:false /InstallationPath:"c:\jboss" /Username:bob /Password:mypass"'`
+		`choco install jboss -params '"/Start:false /InstallationPath:"c:\jboss" /Username:bob /Password:mypass"'`
 
     </description>
     <projectUrl>http://jbossas.jboss.org/downloads</projectUrl>
