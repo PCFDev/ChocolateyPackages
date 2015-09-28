@@ -37,7 +37,7 @@
     <copyright>Copyright © 2004-2015 The Apache Software Foundation. All Rights Reserved.</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/PCFDev/ChocolateyPackages/master/axis2-war/icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/PCFDev/ChocolateyPackages/master/axis2-war/icon128.png</iconUrl>
 	<dependencies>
       <dependency id="chocolatey" version="0.9.9" />
 	  <dependency id="jdk7" version="7.0.79" />
