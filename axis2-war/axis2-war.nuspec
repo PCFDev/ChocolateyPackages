@@ -8,16 +8,20 @@
     <authors>The Apache Software Foundation</authors>
     <owners>ITLackey</owners>
     <summary>
-		Apache Axis2/Java Web Services / SOAP / WSDL engine WAR distribution.
+		Apache Axis2/Java Web Services / SOAP / WSDL engine - WAR distribution.
 	</summary>
     <description>
 	  	Apache Axis2™ is a Web Services / SOAP / WSDL engine, the successor to the widely used Apache Axis SOAP stack. 
 		There are two implementations of the Apache Axis2 Web services engine - Apache Axis2/Java and Apache Axis2/C. 
 		This package provides an installer for the Apache Axis2/Java implementation.
 		
+		
+		The WAR (Web Archive) Distribution will be the web application of Axis2 which can be deployed in most of the servlet containers.
+		
 		### Overriding installation parameters example:
 
-	    `choco install axis2 -params '"/InstallationPath:"c:\jboss\standalone\deployments\axis2.war""'`
+		To install into a standalone installation of JBoss:		
+	    `choco install axis2-war -params '"/InstallationPath:"c:\jboss\standalone\deployments\axis2.war""'`
  
 		### Additional notes
 		This package contains a dependency on JDK7. However if you have JDK8+ installed you should be able to 
@@ -29,7 +33,7 @@
     <docsUrl>http://axis.apache.org/axis2/java/core/docs/toc.html</docsUrl>
     <mailingListUrl>http://axis.apache.org/axis2/java/core/mail-lists.html</mailingListUrl>
     <bugTrackerUrl>http://issues.apache.org/jira/browse/AXIS2</bugTrackerUrl>
-    <tags>axis2 admin java soap webservices</tags>
+    <tags>axis2 admin java soap webservices war</tags>
     <copyright>Copyright © 2004-2015 The Apache Software Foundation. All Rights Reserved.</copyright>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
