@@ -126,7 +126,7 @@ if($jbossSvc -eq $null){
 		
 	Install-ChocolateyZipPackage @servicePackageArgs
      
-    cp $toolsDir\..\assets\service.bat $installationPath\bin\service.bat -force
+    cp $toolsDir\service.bat $installationPath\bin\service.bat -force
     
     &$installationPath\bin\service.bat install
 

@@ -2,4 +2,5 @@ choco install {packageName} -fdvyi -source .\_packages
 choco uninstall {packageName} -fdvy
 
 
-choco install axis2 -fdvyi -source .\_packages -params '/InstallationPath:"c:\installs\{packageName}"'
+choco install jboss-as -fdvyi -source .\_packages -params '/InstallationPath:"c:\jboss"'
+choco install axis2-war -fdvyi -source .\_packages -params '/InstallationPath:"c:\jboss\standalone\deployments\i2b2.war"'
