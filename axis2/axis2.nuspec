@@ -4,7 +4,7 @@
   <metadata>
     <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
     <id>axis2</id>
-    <title>axis2 (Install)</title>
+    <title>Axis2 (Java)</title>
     <version>__REPLACE__</version>
     <authors>__REPLACE_AUTHORS_OF_SOFTWARE_COMMA_SEPARATED__</authors>
     <owners>__REPLACE_YOUR_NAME__</owners>

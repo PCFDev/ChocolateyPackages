@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="axis2-pack.ps1" />
     <Compile Include="axis2\axis2.nuspec" />
+    <Compile Include="axis2\icon.jpg" />
     <Compile Include="axis2\tools\chocolateyinstall.ps1" />
     <Compile Include="axis2\tools\chocolateyuninstall.ps1" />
     <Compile Include="commands.json" />
